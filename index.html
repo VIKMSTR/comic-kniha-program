@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kniha Brno × Comic-Con Brno 2026 – můj program</title>
+<meta name="description" content="Sloučený program Knihy Brno a Comic-Conu Brno 13.–15. 11. 2026 s vlastním výběrem a sdílením.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1><span class="kbw">Kniha Brno</span> a <span class="ccw">Comic-Con Brno</span> v jednom rozvrhu</h1>
+    <p class="lede">13.–15. 11. 2026, pavilon E, BVV. Každý řádek je jedna hodina; vlevo besedy knižního veletrhu, vpravo Comic-Con. Hvězdičkou si stavíte vlastní plán, prohlížeč si ho zapamatuje.</p>
+  </header>
+</div>
+
+<div class="shared" id="shared" hidden>
+  <div class="wrap row">
+    <p id="sharedText"></p>
+    <span class="spacer"></span>
+    <button type="button" class="btn" id="sharedMerge">Přidat do mého plánu</button>
+    <button type="button" class="btn" id="sharedReplace">Nahradit můj plán</button>
+    <button type="button" class="btn ghost" id="sharedClose">Zavřít</button>
+  </div>
+</div>
+
+<div class="bar" id="bar">
+  <div class="wrap">
+    <div class="row">
+      <div class="days row" role="group" aria-label="Den" id="days"></div>
+      <span class="spacer"></span>
+      <button type="button" class="tog" id="planTog" aria-pressed="false">★ Jen můj plán <span id="count"></span></button>
+    </div>
+    <div class="row tools">
+      <button type="button" class="btn" id="shareBtn">Sdílet plán</button>
+      <button type="button" class="btn" id="icsBtn">Stáhnout do kalendáře (.ics)</button>
+      <button type="button" class="btn ghost" id="clearBtn">Vymazat výběr</button>
+      <span class="toast" id="toast" role="status" aria-live="polite"></span>
+    </div>
+    <details class="filters">
+      <summary>Vybrat sály a linie</summary>
+      <div class="chips" id="chips"></div>
+    </details>
+  </div>
+</div>
+
+<div class="wrap">
+  <p class="daynote" id="daynote" hidden></p>
+  <div class="colhead"><div></div><div class="k">Kniha Brno</div><div class="c"><span>Comic-Con Brno</span></div></div>
+  <main id="grid"></main>
+  <footer class="notes">
+    <p>Zdroj: oficiální programy <a href="https://www.knihabrno.cz/program">knihabrno.cz/program</a> a <a href="https://program.comiccon.cz/">program.comiccon.cz</a>, staženo 13. 11. 2026. Pořadatelé si vyhrazují změny.</p>
+    <p>Časy označené „≈“ v hlavním sále E1 jsou odvozené z pořadí pořadů a z poznámek typu „začíná ve 13:45“. Fanouškovské linie Comic-Conu běží po hodinových blocích.</p>
+    <p>Autogramiády Knihy Brno nejsou v tabulce: zpravidla navazují hodinu po besedě v prostoru autogramiád daného sálu (max. 45 minut). Herny, turnaje a fotografování s hosty najdete na webu Comic-Conu.</p>
+    <p>Vstupenka na Comic-Con platí i na Knihu Brno, opačně ne. Výběr se ukládá do cookie v tomto prohlížeči; nikam se neposílá.</p>
+  </footer>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
